@@ -1,4 +1,3 @@
-## Team: Will Deary, Isaac Quinton
 # Welcome, naturalstupidity, to the 2023 TDI Global Hackathon
 ## About your hackathon environment
 Your hackathon environment consists of four components:
