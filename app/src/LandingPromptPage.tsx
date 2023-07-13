@@ -3,7 +3,8 @@ import React from 'react';
 import { Grid, Card, Typography} from '@mui/material';
 import PromptCard from './components/PromptCard';
 
-const LandingPromptPage = () => {
+const LandingPromptPage = ({handlePromptClick, prompts}:any) => {
+
     return (
         <Grid
         display={'flex'}
@@ -26,10 +27,15 @@ const LandingPromptPage = () => {
                 Confluence
             </Typography>
             <div>
-            <PromptCard />
-            <PromptCard />
-
-
+                {
+                    prompts.MyDB && prompts["MyDB"].map((prompt:any) => {
+                        return (
+                            <PromptCard 
+                            handlePromptClick={handlePromptClick}
+                            prompt={prompt}/>
+                        )
+                    })
+                }
             </div>
         </Grid>
         <Grid 
@@ -47,10 +53,15 @@ const LandingPromptPage = () => {
                 Confluence
             </Typography>
             <div>
-            <PromptCard />
-            <PromptCard />
-            <PromptCard />
-
+                {
+                    prompts.Confluence && prompts["Confluence"].map((prompt:any) => {
+                        return (
+                            <PromptCard 
+                            handlePromptClick={handlePromptClick}
+                            prompt={prompt}/>
+                        )
+                    })
+                }
             </div>
         </Grid>
 
@@ -69,15 +80,17 @@ const LandingPromptPage = () => {
                 Confluence
             </Typography>
             <div>
-            <PromptCard />
-            <PromptCard />
-
-
+                {
+                    prompts.DBNetwork && prompts["DBNetwork"].map((prompt:any) => {
+                        return (
+                            <PromptCard 
+                            handlePromptClick={(promp: any)=>handlePromptClick(prompt)}
+                            prompt={prompt}/>
+                        )
+                    })
+                }
             </div>
         </Grid>
-
-        
-    
         </Grid>
     );
 };

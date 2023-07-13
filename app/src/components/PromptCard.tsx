@@ -2,7 +2,8 @@ import React from 'react';
 
 import { Grid, Card, Typography} from '@mui/material';
 
-const PromptCard = () => {
+const PromptCard = ({handlePromptClick, prompt}:any) => {
+    
     return (
         <Grid xs={4} 
         sx={{
@@ -20,10 +21,12 @@ const PromptCard = () => {
                 paddingLeft: "8px",
                 paddingRight: "8px",
                 textAlign: "center",
+                cursor: "pointer",
             }}
+            onClick={()=>handlePromptClick(prompt)}
             >
                 <Typography variant={"body2"}>
-                    Prompt Prompt Prompt Prompt Prompt Prompt Prompt Prompt Prompt Prompt Prompt 
+                    {prompt}
                 
                 </Typography> 
             </Card>
