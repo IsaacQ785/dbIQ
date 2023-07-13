@@ -5,8 +5,12 @@ import PromptCard from './components/PromptCard';
 
 const LandingPromptPage = () => {
     return (
-        <>
-
+        <Grid
+        display={'flex'}
+        direction={'row'}
+        rowSpacing={0}
+        alignContent={"start"}
+        >
         <Grid 
         xs={4} 
         display={'flex'}
@@ -28,7 +32,6 @@ const LandingPromptPage = () => {
 
             </div>
         </Grid>
-
         <Grid 
         xs={4} 
         display={'flex'}
@@ -75,7 +78,7 @@ const LandingPromptPage = () => {
 
         
     
-        </>
+        </Grid>
     );
 };
 

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Grid, Card} from '@mui/material';
+import { Grid, Card, Typography} from '@mui/material';
 
 const PromptCard = () => {
     return (
@@ -21,7 +21,12 @@ const PromptCard = () => {
                 paddingRight: "8px",
                 textAlign: "center",
             }}
-            >Hello Hello Hello Hello Hello Hello Hello Hello Hello  </Card>
+            >
+                <Typography variant={"body2"}>
+                    Prompt Prompt Prompt Prompt Prompt Prompt Prompt Prompt Prompt Prompt Prompt 
+                
+                </Typography> 
+            </Card>
         </Grid>
     );
 };
