@@ -22,6 +22,7 @@ const PromptCard = ({handlePromptClick, prompt}:any) => {
                 paddingRight: "8px",
                 textAlign: "center",
                 cursor: "pointer",
+                borderRadius: "12px",
             }}
             onClick={()=>handlePromptClick(prompt)}
             >
