@@ -8,72 +8,29 @@ import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import UserQuestionCard from "./components/UserQuestionCard";
 import AnswerCard from "./components/AnswerCard";
 import { Margin } from "@mui/icons-material";
+import Search from "./components/SearchBox";
 
-const inputList: any = [
-  "Hello, [name]! How can I help you with today?",
-  "How do I install this Java dependiency?",
-  "This is how you do it",
-  "Ok, great! Thanks for the help!",
-  "No problem!",
-  "Bye!",
-  ,
-  "This is how you do it",
-  "Ok, great! Thanks for the help!",
-  "No problem!",
-  "Bye!",
-  "This is how you do it",
-  "Ok, great! Thanks for the help!",
-  "No problem!",
-  "Bye!",
-  "How do I install this Java dependiency?",
-  "This is how you do it",
-  "Ok, great! Thanks for the help!",
-  "No problem!",
-  "Bye!",
-  ,
-  "This is how you do it",
-  "Ok, great! Thanks for the help!",
-  "No problem!",
-  "Bye!",
-  "This is how you do it",
-  "Ok, great! Thanks for the help!",
-  "No problem!",
-  "Bye!",
-];
+const inputList: any = ["Hello, [name]! How can I help you with today?Hello, [name]! How can I help you with today?Hello, [name]! How can I help you with today?Hello, [name]! How can I help you with today?Hello, [name]! How can I help you with today?", "How do I install this Java dependiency?How do I install this Java dependiency?How do I install this Java dependiency?How do I install this Java dependiency?How do I install this Java dependiency?", "This is how you do it", "Ok, great! Thanks for the help!", "No problem!", "Bye!",, "This is how you do it", "Ok, great! Thanks for the help!", "No problem!", "Bye!", "This is how you do it", "Ok, great! Thanks for the help!", "No problem!", "Bye!", "How do I install this Java dependiency?", "This is how you do it", "Ok, great! Thanks for the help!", "No problem!", "Bye!",, "This is how you do it", "Ok, great! Thanks for the help!", "No problem!", "Bye!", "This is how you do it", "Ok, great! Thanks for the help!", "No problem!", "Bye!"];
 
-type Props = {
-  question: string;
-  setQuestion: Dispatch<SetStateAction<string>>;
-};
-function ChatBox({ question, setQuestion }: Props) {
-  const [list, setQuestionList] = useState<string[]>(inputList);
+function ChatBox({list, text, handleChangeText, handleQuestion}: any) {
 
-  function handleChangeText(e: ChangeEvent<HTMLInputElement>) {
-    setQuestion(e.target.value);
-  }
-
-  function handleQuestion(e: any) {
-    setQuestionList([...list, question]);
-    setQuestion("");
-  }
-
-  return (
-    <>
-      <Paper
-        elevation={4}
-        sx={{
-          height: "86vh",
-          marginBottom: "12px",
-        }}
-      >
-        <Grid
-          container
-          direction="column"
-          justifyContent="center"
-          alignItems="center"
-          sx={{ maxHeight: "100%", maxWidth: "100%", marginBottom: "8px" }}
-        >
-          <div
+    return (
+        <>
+        <Paper elevation={4} sx={{ 
+            height: "86vh",
+            marginBottom: "12px",
+            }}>
+            <Grid
+                container
+                direction="column"
+                justifyContent="center"
+                alignItems="center"
+                sx={{ maxHeight: "100%",
+                maxWidth: "100%",
+                marginBottom: "8px",
+            }}
+                >
+            <div
             style={{
               width: "100%",
               marginLeft: "8px",
@@ -84,46 +41,28 @@ function ChatBox({ question, setQuestion }: Props) {
             {list &&
               list.map((item, index) => {
                 {
-                  if (index % 2 != 0) {
-                    return <UserQuestionCard text={item} />;
-                  } else {
-                    return <AnswerCard text={item} />;
-                  }
+                    list && list.map((item:any, index:any)=>{
+                        {
+                            if(index % 2 != 0){
+                                
+                    return(<UserQuestionCard text={item}/>)
+                            }else{
+                                return(<AnswerCard text={item} />)
+                            }
+                        }
+                    })
                 }
-              })}
-          </div>
-        </Grid>
-      </Paper>
-      <Grid container direction="column" alignItems="center">
-        <Grid item xs={12}>
-          <TextField
-            id="filled-basic"
-            label="Filled"
-            variant="filled"
-            sx={{
-              height: "3rem",
-              width: "80ch",
-            }}
-            value={question}
-            onChange={handleChangeText}
-          />
-          <Button
-            variant="contained"
-            onClick={handleQuestion}
-            sx={{
-              height: "3rem",
-              marginLeft: "8px",
-              marginTop: "auto",
-              marginBottom: "auto",
-            }}
-            {...(list.length % 2 === 0 ? { disabled: true } : {})}
-          >
-            {<SearchOutlinedIcon />}
-          </Button>
-        </Grid>
-      </Grid>
-    </>
-  );
+            </div>
+            </Grid>
+        </Paper>
+        <Search 
+        handleChangeText={handleChangeText} 
+        text={text}
+        list={list}
+        handleQuestion={handleQuestion}
+        />
+     </>
+    );
 }
 
 export default ChatBox;

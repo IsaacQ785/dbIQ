@@ -19,8 +19,8 @@ const bull = (
 function UserQuestionCard({text}: any) {
   return (
     <Card sx={{ 
-      minWidth: 100, 
-      maxWidth: "50%",
+      width: "fit-content", 
+      maxWidth: "66%",
       marginBottom: "8px",
       marginTop: "8px",
       marginLeft: "auto",

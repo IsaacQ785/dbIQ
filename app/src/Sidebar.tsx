@@ -57,6 +57,7 @@ const Sidebar = ({ setQuestion}: any) => {
       alignItems="center"
       justifyContent="space-between"
       height="100%"
+      sx={{ backgroundColor: "#062157" }}
     >
       <Grid maxWidth="-webkit-fill-available">
         <AppBar position="static">
