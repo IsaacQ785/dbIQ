@@ -37,8 +37,11 @@ const SearchBox: React.FC<SearchProps> = ({
               height: "3rem",
               marginLeft: "8px",
               marginTop: "auto",
-              marginBottom: "auto",
+              marginBottom: "auto"
             }}
+            {
+                ...(list.length % 2 !== 0 ? { disabled: true } : {})
+            }
           >
             {<SearchOutlinedIcon />}
           </Button>

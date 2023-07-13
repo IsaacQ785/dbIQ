@@ -3,7 +3,8 @@ import axios from "axios";
 
 const useApp = (question: string, setList: Dispatch<SetStateAction<string[]>>, list: string[]) => {
     const postQuestion = async () => {
-        axios.post("https://europe-west3-hack-team-naturalstupidity.cloudfunctions.net/python-backend/",
+        setList([...list, question])
+        await axios.post("https://europe-west3-hack-team-naturalstupidity.cloudfunctions.net/python-backend/",
         {
             prompt: question
         },
@@ -15,6 +16,7 @@ const useApp = (question: string, setList: Dispatch<SetStateAction<string[]>>, l
             setList([...list, question, response.data]);
         }).catch((err: any) => {
             console.log(err);
+            setList([...list, question, "Error occurred, please try a different prompt"])
         })
     }
 
