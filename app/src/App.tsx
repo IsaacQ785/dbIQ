@@ -19,7 +19,7 @@ const prompts = {
 const App = () => {
   const [question, setQuestion] = useState("");
   const [list, setList] = useState<string[]>([]);
-  const { postQuestion } = useApp(question, setList, list);
+  const { postQuestion } = useApp(question, setQuestion,setList, list);
 
   const [notLandingPage, setNotLandingPage] = useState(false);
 
@@ -36,7 +36,7 @@ const App = () => {
     <>
       <Grid container height="100vh">
         <Grid item xs={3}>
-          <Sidebar />
+          <Sidebar setQuestion={setQuestion}/>
         </Grid>
         <Grid item xs={9}>
           <Grid
@@ -44,7 +44,7 @@ const App = () => {
               height: "90vh",
             }}
           >
-            {notLandingPage ? (
+            {notLandingPage || list.length != 0 ? (
               <ChatBox
                 list={list}
                 text={question}
@@ -65,14 +65,6 @@ const App = () => {
             handleQuestion={postQuestion}
           />
         </Grid>
-      </Grid>
-      <Grid item xs={9}>
-        <ChatBox
-          list={list}
-          text={question}
-          handleChangeText={handleChangeText}
-          handleQuestion={postQuestion}
-        />
       </Grid>
     </>
   );

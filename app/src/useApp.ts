@@ -1,9 +1,10 @@
 import { Dispatch, SetStateAction, useState } from "react"
 import axios from "axios";
 
-const useApp = (question: string, setList: Dispatch<SetStateAction<string[]>>, list: string[]) => {
+const useApp = (question: string, setQuestion: any, setList: Dispatch<SetStateAction<string[]>>, list: string[]) => {
     const postQuestion = async () => {
         setList([...list, question])
+        setQuestion("");
         await axios.post("https://europe-west3-hack-team-naturalstupidity.cloudfunctions.net/python-backend/",
         {
             prompt: question
