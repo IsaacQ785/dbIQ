@@ -24,18 +24,13 @@ const App = () => {
 
     const [notLandingPage, setNotLandingPage] = useState(false);
 
-    const [text, setText] = useState("");
-
-
-    const [chosenPrompt, setChosenPrompt] = useState("")
-
     function handleChangeText(e: ChangeEvent<HTMLInputElement>){
-        setText(e.target.value);
+        setQuestion(e.target.value);
     }
 
     function handlePromptClicks(prompt: any) {
         setNotLandingPage(!notLandingPage)
-        setText(prompt);
+        setQuestion(prompt);
     }
 
     return (
@@ -55,7 +50,7 @@ const App = () => {
                     notLandingPage ?
                     <ChatBox
                     list={list}
-                text={text}
+                text={question}
                 handleChangeText={handleChangeText}
                 handleQuestion={postQuestion}
                 
@@ -68,7 +63,7 @@ const App = () => {
                 </Grid>
                 <SearchBox
                 handleChangeText={handleChangeText}
-                text={text}
+                text={question}
                 list={list}
                 handleQuestion={postQuestion}
                 />
