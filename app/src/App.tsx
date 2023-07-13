@@ -1,6 +1,7 @@
 import { Button, Grid, Paper, TextField, Typography } from "@mui/material"
 import React, { useState } from "react"
 import useApp from "./useApp";
+import Sidebar from "./Sidebar";
 
 const App = () => {
 
@@ -8,10 +9,10 @@ const App = () => {
     const { answer, postQuestion } = useApp(question);
 
     return (
-        <Grid container>
-            <Grid item xs={3}>
-                <Paper elevation={2} sx={{ margin: "10px", height: "calc(100% -20px)" }}>
-                    <Typography>left</Typography>
+        <Grid container height="100vh">
+            <Grid item xs={3} sx={{backgroundColor: "#062157"}}>
+                <Paper elevation={2} sx={{ margin: "10px", height: "100%", backgroundColor: "#062157" }}>
+                <Sidebar/>
                 </Paper>
             </Grid>
             <Grid item xs={9}>
