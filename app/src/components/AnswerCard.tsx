@@ -19,7 +19,6 @@ const bull = (
 function AnswerCard({text}: any) {
   return (
     <Card sx={{ 
-        minWidth: "50px",
         width: "fit-content",
         justifySelf: "start",
         alignSelf: "start",
