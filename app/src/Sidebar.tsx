@@ -23,7 +23,7 @@ import CodeIcon from "@mui/icons-material/Code";
 import PeopleIcon from "@mui/icons-material/People";
 import AddIcon from "@mui/icons-material/Add";
 
-const Sidebar = () => {
+const Sidebar = ({ setQuestion}: any) => {
   const [expanded, setExpanded] = React.useState<string>("");
 
   const handleChange = (panel: string) => {
@@ -73,6 +73,7 @@ const Sidebar = () => {
             expanded={expanded}
             Icon={CodeIcon}
             handleChange={handleChange}
+            setQuestion={setQuestion}
           />
           <AccordionEntry
             title="New Joiner"
@@ -80,6 +81,7 @@ const Sidebar = () => {
             expanded={expanded}
             Icon={AddIcon}
             handleChange={handleChange}
+            setQuestion={setQuestion}
           />
           <AccordionEntry
             title="People"
@@ -87,6 +89,7 @@ const Sidebar = () => {
             expanded={expanded}
             Icon={PeopleIcon}
             handleChange={handleChange}
+            setQuestion={setQuestion}
           />
         </Grid>
       </Grid>
