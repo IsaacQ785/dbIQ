@@ -16,6 +16,7 @@ const PromptCard = ({handlePromptClick, prompt}:any) => {
         >
             <Card
             sx={{
+                width: "100%",
                 paddingTop: "16px",
                 paddingBottom: "16px",
                 paddingLeft: "8px",
