@@ -6,9 +6,9 @@ import useApp from "./useApp";
 import SearchBox from "./components/SearchBox";
 import LandingPromptPage from "./LandingPromptPage";
 
-const myDBPrompts = ["How do I set up Jave"];
-const confluencePrompts = ["Confluence this"];
-const dbNetworkPrompts = ["Who is who"];
+const myDBPrompts = ["What in person events are happening within tech London this week?","Which domain is responsible for regulatory compliance within CB?",];
+const confluencePrompts = ["How do I install JAVA 17?","What new software has been licenced in the bank within the last 6 months?","Show me the flow diagram for securities in India. "];
+const dbNetworkPrompts = ["Generate a list of Associates in Frankfurt.","Who should I contact regarding a Fabric issue?"];
 
 const prompts = {
   MyDB: myDBPrompts,
