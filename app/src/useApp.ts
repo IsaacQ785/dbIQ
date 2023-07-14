@@ -3,7 +3,7 @@ import axios from "axios";
 
 const useApp = (question: string, setQuestion: any, setList: Dispatch<SetStateAction<string[]>>, list: string[]) => {
     const postQuestion = async () => {
-        setList([...list,question])
+        setList([...list, question])
         setQuestion("");
         await axios.post("https://europe-west3-hack-team-naturalstupidity.cloudfunctions.net/python-backend/",
         {
