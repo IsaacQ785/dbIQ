@@ -17,11 +17,12 @@ function ChatBox({ list }: any) {
           direction="column"
           justifyContent="center"
           alignItems="center"
-          sx={{ maxHeight: "100%", maxWidth: "100%", marginBottom: "8px" }}
+          sx={{ maxHeight: "100%", maxWidth: "100%", marginBottom: "8px", height: "100%", marginTop: "auto" }}
         >
           <div
             style={{
               width: "100%",
+              marginTop: "auto",
               marginLeft: "8px",
               marginRight: "8px",
               overflowY: "scroll",
@@ -30,7 +31,7 @@ function ChatBox({ list }: any) {
             {list &&
               list.map((item: any, index: any) => {
                 {
-                  if (index % 2 != 0) {
+                  if (index % 2 === 0) {
                     return <UserQuestionCard text={item} />;
                   } else {
                     return <AnswerCard text={item} />;
