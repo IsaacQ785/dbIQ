@@ -1,5 +1,5 @@
 #resource "google_cloud_run_v2_service" "tfc_cloud_run_service" {
-#  name     = "${var.project_id}-tfc-cloud-run-service"
+#  name     = "tfc-cloud-run-service"
 #  location = "europe-west3"
 #
 #  template {
