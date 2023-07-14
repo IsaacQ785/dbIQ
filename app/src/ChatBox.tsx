@@ -1,9 +1,16 @@
 import { Grid } from "@mui/material";
-import React from "react";
+import React, {useEffect, useRef} from "react";
 import AnswerCard from "./components/AnswerCard";
 import UserQuestionCard from "./components/UserQuestionCard";
 
 function ChatBox({ list }: any) {
+  const scrollContainerRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollTop = scrollContainerRef.current.scrollHeight;
+    }
+  }, [list])
   return (
     <>
       <Grid
@@ -20,12 +27,16 @@ function ChatBox({ list }: any) {
           sx={{ maxHeight: "100%", maxWidth: "100%", marginBottom: "8px", height: "100%", marginTop: "auto" }}
         >
           <div
+            ref={scrollContainerRef}
             style={{
               width: "100%",
               marginTop: "auto",
               marginLeft: "8px",
               marginRight: "8px",
               overflowY: "scroll",
+              flexDirection: "column-reverse",
+              scrollBehavior: "smooth",
+
             }}
           >
             {list &&
@@ -34,7 +45,7 @@ function ChatBox({ list }: any) {
                   if (index % 2 === 0) {
                     return <UserQuestionCard text={item} />;
                   } else {
-                    return <AnswerCard text={item} />;
+                    return <UserQuestionCard text={item} />;
                   }
                 }
               })}
