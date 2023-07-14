@@ -23,6 +23,9 @@ import CodeIcon from "@mui/icons-material/Code";
 import PeopleIcon from "@mui/icons-material/People";
 import AddIcon from "@mui/icons-material/Add";
 
+import LogoBlue from "../public/LogoBlue.jpeg";
+import PoweredByGoogle from "../public/PoweredByGoogle.jpeg";
+
 const Sidebar = ({ setQuestion}: any) => {
   const [expanded, setExpanded] = React.useState<string>("");
 
@@ -60,13 +63,14 @@ const Sidebar = ({ setQuestion}: any) => {
       sx={{ backgroundColor: "#062157" }}
     >
       <Grid maxWidth="-webkit-fill-available">
-        <AppBar position="static">
+        <div >
           <Toolbar sx={{ backgroundColor: "#062157" }}>
-            <Typography variant="h4" component="div" sx={{ flexGrow: 1 }}>
+            {/* <Typography variant="h4" component="div" sx={{ flexGrow: 1 }}>
               dbIQ
-            </Typography>
+            </Typography> */}
+            <img src={LogoBlue} alt="" />
           </Toolbar>
-        </AppBar>
+        </div>
         <Grid margin="10px" maxWidth="-webkit-fill-available">
           <AccordionEntry
             title="Dev"
@@ -95,7 +99,8 @@ const Sidebar = ({ setQuestion}: any) => {
         </Grid>
       </Grid>
       <Grid alignContent="center" marginBottom="20px">
-        <Link href="#">FAQs</Link>
+        <img src={PoweredByGoogle} alt="Powered By Google"
+        style={{width: "100%", height: "auto"}}/>
       </Grid>
     </Grid>
   );
