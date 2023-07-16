@@ -1,4 +1,5 @@
-# Welcome, naturalstupidity, to the 2023 TDI Global Hackathon
+# Natural Stupidity presents dbIQ.
+#### Deutsche Bank 2023 AI Hackathon Global Finalists (4th place out of >100 teams)
 ## Contents
 1. [Bye bye]()
 1. [About your hackathon environment](#about-your-hackathon-environment)
